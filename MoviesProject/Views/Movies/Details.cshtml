@@ -1,0 +1,50 @@
+﻿@model MoviesProject.Models.Movie
+
+@{
+    ViewBag.Title = "Информация о фильме";
+}
+
+<h2>@Html.DisplayFor(model => model.name)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.PageNum)
+        <dt></dt>
+        @if (!string.IsNullOrEmpty(Model.poster))
+        {
+            <dd><img src="@Url.Content(Model.poster)" width="400" /></dd>
+        }
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.director)
+        </dd>
+        <br />
+        <dt></dt>
+        <dd>
+        <p>
+            @Html.ActionLink("Вернуться к списку фильмов", "Index", new { page = Model.PageNum })
+        </p>
+        </dd>
+    </dl>
+</div>

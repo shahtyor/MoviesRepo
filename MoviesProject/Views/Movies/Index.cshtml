@@ -1,0 +1,71 @@
+﻿@model MoviesProject.Models.MoviesWithPaging
+@using MoviesProject.Helpers;
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "Список фильмов";
+    string pn = Request.QueryString["page"];
+    if (string.IsNullOrEmpty(pn))
+    {
+        pn = "1";
+    }
+}
+
+<h2>Список фильмов</h2>
+<br />
+<div>
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink(" ", "Create", new { PageNum = pn }, new { @class = "glyphicon glyphicon-plus-sign" })
+    @Html.ActionLink(" Добавить фильм", "Create", new { PageNum = pn }, null)
+    <br /><br />
+}
+</div>
+<table class="table table-striped table-hover">
+    <tr style="background-color:lightskyblue;">
+        <th>
+            @Html.DisplayNameFor(model => model.Movies.First().name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movies.First().director)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movies.First().year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movies.First().UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Movies) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.name, "Details", new { id = item.id, PageNum = pn }, new { @title = "Просмотр детализации" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.director)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td style="width:55px;">
+            @if (item.UserId == User.Identity.GetUserId())
+            {
+                <nowrap>
+                @Html.ActionLink(" ", "Edit", new { id = item.id, PageNum = pn }, new { @class = "glyphicon glyphicon-edit", @style = "font-size:16px;", @title = "Редактировать" })
+                @Html.ActionLink(" ", "Delete", "Movies", new { id = item.id, PageNum = pn }, new { @class = "glyphicon glyphicon-remove-circle", @style = "font-size:16px;", @title = "Удалить", @onclick = "return confirm('Действительно желаете удалить информацию о фильме?')" })
+                </nowrap>
+            }
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+</div>

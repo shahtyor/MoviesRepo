@@ -83,6 +83,9 @@ C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\bin\ru\Microsoft
 C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\obj\Debug\MoviesProject.csprojResolveAssemblyReference.cache
 C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\obj\Debug\MoviesProject.dll
 C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\obj\Debug\MoviesProject.pdb
+C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\obj\Debug\MoviesProject.Migrations.InitialCreate.resources
+C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\obj\Debug\MoviesProject.csproj.GenerateResource.Cache
+C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\obj\Debug\MoviesProject.Migrations.MigrateDB.resources
+C:\DEVELOPE\2019\ligasporta\Project\MoviesProject\MoviesProject\obj\Debug\MoviesProject.csprojResolveAssemblyReference.cache

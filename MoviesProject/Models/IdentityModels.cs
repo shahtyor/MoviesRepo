@@ -29,5 +29,7 @@ namespace MoviesProject.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MoviesProject.Models.Movie> Movies { get; set; }
     }
 }
